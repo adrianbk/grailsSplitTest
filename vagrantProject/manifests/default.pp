@@ -1,5 +1,7 @@
 #make sure the puppet is installed on the .box otherwise rest of the puppet provisioning will not function
-#include 'apt'
+include 'apt'
+
+class { 'apt': }
 
 #apt::source { 'puppetlabs':
 	#location   => 'http://apt.puppetlabs.com',
@@ -12,13 +14,13 @@ group { "puppet":
 	ensure => "present", 
 }
 
-exec { 'apt-get update':
-  command => '/usr/bin/apt-get update',
-}
+#exec { 'apt-get update':
+#  command => '/usr/bin/apt-get update',
+#}
 
-exec { 'apt-get -y dist-upgrade':
-  command => '/usr/bin/apt-get -y dist-upgrade',
-}
+#exec { 'apt-get -y dist-upgrade':
+#  command => '/usr/bin/apt-get -y dist-upgrade',
+#}
 
 
 notify { 'Installing required packages.': }

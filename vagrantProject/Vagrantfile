@@ -3,22 +3,25 @@
 
 Vagrant.configure("2") do |config|
 
-  #config.vm.provision :shell, :inline => "echo 'export http_proxy=http://<proxy>:8080' >> /etc/profile.d/proxy.sh"
+  #config.vm.provision :shell, :inline => "echo 'export http_proxy=http://sensis-proxy-vs.sensis.com.au:8080' >> /etc/profile.d/proxy.sh"
   
   #Puppet Provisioner setup
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
-    puppet.module_path    = "modules"
+    #puppet.module_path    = "modules"
     puppet.manifest_file  = "default.pp"
   end
 
   config.vm.network :public_network
-
+  config.vm.synced_folder "/home/yellow/projects/yellow-platform-evolution", "/yellow-platform-evolution"
   config.vm.define :vm1 do |vm1|
     vm1.vm.box = "grailsdev"
-      config.vm.provider :virtualbox do |vb|
-        vb.name = "vm1"
-      end
+    
+    config.vm.provider :virtualbox do |vb|
+      vb.name = "vm1"
+      vb.customize ["modifyvm", :id, "--memory", 512]
+      vb.customize ['modifyvm', :id, '--cpus', 2]
+    end
   end
 
   #config.vm.define :ypevm2 do |ypevm2|
