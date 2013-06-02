@@ -12,14 +12,14 @@ All leading to potential race conditions. Along with race conditions, it also be
 This project proides:
 
 1. A base vagrant project used to spin up a configurable number of virtual machines (oracle vitual box) on which tests can be run in parallel.
-- Provisioned using puppet, each VM has a grails stack can be easily provisioned with datastores and stub servers.
-- Mounts the top level projectory on to each VM 
+* Provisioned using puppet, each VM has a grails stack can be easily provisioned with datastores and stub servers.
+* Mounts the top level projectory on to each VM 
 
 ### Why Vagrant 
-	- portable - runs on any development OS
-	- Several provisioning options - puppet, chef sole, etc
-	- Supports several virtualization technoloies (VmWare, VirtualBox, Cloud)
-	- One command to spin up everything
+* portable - runs on any development OS
+* Several provisioning options - puppet, chef sole, etc
+* Supports several virtualization technoloies (VmWare, VirtualBox, Cloud)
+* One command to spin up everything
 
 Yes, virtual machines have performance drawbacks but HARDWARE is cheap - developer time is not!
 
@@ -30,25 +30,25 @@ Yes, virtual machines have performance drawbacks but HARDWARE is cheap - develop
 1. Oracle virtual box 4.2.12 (https://www.virtualbox.org/wiki/Downloads)
 2. Vagrant 2 (http://docs.vagrantup.com/v2/installation/)
 3. A Vagrant base box (http://www.vagrantbox.es/)
-- Ubuntu Ubuntu 12.04 LTS x86_64: https://s3-us-west-2.amazonaws.com/squishy.vagrant-boxes/precise64_squishy_2013-02-09.box
+* Ubuntu Ubuntu 12.04 LTS x86_64: https://s3-us-west-2.amazonaws.com/squishy.vagrant-boxes/precise64_squishy_2013-02-09.box
 
 ## Prerequisites 
-- install vagrant
-- cd gitSplitTest\vagrantProject
+* install vagrant
+** cd gitSplitTest\vagrantProject
 
-- Add the vagrant base box 
--- Copy https://s3-us-west-2.amazonaws.com/squishy.vagrant-boxes/precise64_squishy_2013-02-09.box to gitSplitTest\vms
--- $ vagrant box add grailsdev ..\vms\precise64_squishy_2013-02-09.box
+* Add the vagrant base box 
+** Copy https://s3-us-west-2.amazonaws.com/squishy.vagrant-boxes/precise64_squishy_2013-02-09.box to gitSplitTest\vms
+** $ vagrant box add grailsdev ..\vms\precise64_squishy_2013-02-09.box
 
 
 ## Usefull Vagrant commands
--Running vagrant
--- Start up the VMs
--- $ vagrant up
+* Running vagrant
+** Start up the VMs
+** $ vagrant up
 
-- Destroying all traces of the vms
-vagrant destroy -f 
+* Destroying all traces of the vms
+** vagrant destroy -f 
 
-- Removing the vagrant box:
-vagrant box remove grailsdev virtualbox
+* Removing the vagrant box:
+** vagrant box remove grailsdev virtualbox
 
