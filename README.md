@@ -34,21 +34,21 @@ Yes, virtual machines have performance drawbacks but HARDWARE is cheap - develop
 
 ## Prerequisites 
 * install vagrant
-** cd gitSplitTest\vagrantProject
+-- cd gitSplitTest\vagrantProject
 
 * Add the vagrant base box 
-** Copy https://s3-us-west-2.amazonaws.com/squishy.vagrant-boxes/precise64_squishy_2013-02-09.box to gitSplitTest\vms
-** $ vagrant box add grailsdev ..\vms\precise64_squishy_2013-02-09.box
+-- Copy https://s3-us-west-2.amazonaws.com/squishy.vagrant-boxes/precise64_squishy_2013-02-09.box to gitSplitTest\vms
+-- $ vagrant box add grailsdev ..\vms\precise64_squishy_2013-02-09.box
 
 
 ## Usefull Vagrant commands
 * Running vagrant
-** Start up the VMs
-** $ vagrant up
+-- Start up the VMs
+-- $ vagrant up
 
 * Destroying all traces of the vms
-** vagrant destroy -f 
+-- vagrant destroy -f 
 
 * Removing the vagrant box:
-** vagrant box remove grailsdev virtualbox
+-- vagrant box remove grailsdev virtualbox
 
