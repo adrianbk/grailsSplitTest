@@ -1,3 +1,4 @@
 /vagrantProject/.vagrant
 
 /vms/*.box
+/vagrantProject/software/grails-2.2.2.zip
