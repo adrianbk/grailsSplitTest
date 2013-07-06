@@ -5,6 +5,6 @@ class preconfig {
 	}
 
   exec{ 'os-dist-upgrade':
-    command => 'ls',#apt-get -y dist-upgrade',
+    command => 'ls',#'apt-get -y dist-upgrade',
   }
 }
